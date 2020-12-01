@@ -6,8 +6,8 @@ console.log("\nHello " + UserName.toLowerCase()+ "!");
 var userwish = readlineSync.question("Type 'yes' if you wish to play and 'no' to exit.\n");
 if(userwish.toUpperCase() !== "YES")
 {
-console.log("Thanks for participating!");
-process.exit();
+  console.log("Thanks for participating!");
+  process.exit();
 }
 
 console.log("\nLets begin the game of " +chalk.italic("horoscope"));
