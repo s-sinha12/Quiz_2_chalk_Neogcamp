@@ -1,0 +1,15 @@
+{
+  "name": "quiz_2_chalk_neogcamp",
+  "version": "1.0.0",
+  "description": "npmpackage",
+  "main": "NewFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "readline-sync": "^1.4.10"
+  }
+}

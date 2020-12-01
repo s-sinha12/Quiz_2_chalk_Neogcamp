@@ -1,0 +1,103 @@
+var readlineSync = require('readline-sync');
+var chalk = require('chalk');
+var score = 0;
+var UserName = readlineSync.question("Enter your name \n");
+console.log("\nHello " + UserName.toLowerCase()+ "!");
+var userwish = readlineSync.question("Type 'yes' if you wish to play and 'no' to exit.\n");
+if(userwish.toUpperCase() !== "YES")
+{
+console.log("Thanks for participating!");
+process.exit();
+}
+
+console.log("\nLets begin the game of " +chalk.italic("horoscope"));
+console.log("You will be answering 5 questions. Type a/b/c to submit your answer.");
+
+function horoscope(score)
+{
+if(score< 0) { console.log("Your stars show your horoscope is: " + chalk.italic(" pieces")); } if((score>0) && (score
+    <5)) { console.log("Your stars show your horoscope is: " + chalk.italic(" Aquaries")); } if((score>5) && (score<10))
+            { console.log("Your stars show your horoscope is: " + chalk.italic(" Scorpion")); } if(score>10)
+            {
+            console.log("Your stars show your horoscope is: " + chalk.italic("Leo"));
+            }
+            }
+            function play(question, answer)
+            {
+            var UserAnswer = readlineSync.keyIn("Your answer: ",{limit: '$<a-c>'});
+                if(UserAnswer.toLowerCase() === answer)
+                {
+                score = score +2;
+                //console.log("You answered: "+ UserAnswer.toLowerCase());
+                console.log("\n");
+
+                }
+
+                else
+                {
+                score = score - 0.5;
+                //console.log("You answered: "+ UserAnswer.toLowerCase());
+                console.log("\n");
+
+                }
+
+
+                }
+
+                var ques = [
+                {
+                question : "which kind of food you like?",
+                a : "salty",
+                b : "sweet",
+                c : "bland",
+                answer : "a",
+                },
+
+                {
+                question : "which places you like to visit?",
+                a : "party",
+                b : "peaceful",
+                c : "aesthetic ",
+                answer : "c",
+                },
+
+                {
+                question : "where do you aspire to become?",
+                a : "socialist",
+                b : "corporate",
+                c : "saint ",
+                answer : "b",
+                },
+
+                {
+                question : "who you feel best connection with?",
+                a : "wife/husband",
+                b : "mother",
+                c : "kids",
+                answer : "c",
+                },
+
+                {
+                question : "what would you choose?",
+                a : "money",
+                b : "travel",
+                c : "luxury",
+                answer : "a",
+                }];
+
+
+                for(var i=0; i<ques.length; i++) { if(i!==0) { console.log("What do you want to do?");
+                    console.log("Press Y to continue or any other key to exit"); if(!readlineSync.keyInYN("You selected: "))
+   {
+     console.log(" \n"); console.log("Your score is: "+ score);
+     console.log(" To know your horoscope, complete the game"); console.log("Thanks for playing!"); process.exit(); } }
+                    console.log("\n"); console.log("Question "+ (i+1) +" :"); console.log(ques[i].question);
+                    console.log(" a: " + ques[i].a);
+   console.log(" b: " + ques[i].b);
+   console.log(" c: " + ques[i].c);
+    
+   play(ques[i].question, ques[i].answer);
+ }
+
+ console.log(" Your score is: "+ score+" \n"); horoscope(score); //console.log("You did a good job.");
+                    console.log("Thanks for playing!");
